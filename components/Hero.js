@@ -4,7 +4,7 @@ const Hero = () => {
   return (
     <div className="relative h-[250px] sm:h-[350px] lg:h-[400px] xl:h-[500px] 2xl:h-[600px]">
       <Image
-        src="https://lh4.googleusercontent.com/4K-6bKw67tLnUoIv9f5r5I0eZBKoO-tx3KmoH-yo36U16Cum98s6678kpGkZIMaGsmHYHGUpOAWfP-zi-SUV=w1920-h923"
+        src="https://firebasestorage.googleapis.com/v0/b/docs-clone-e102b.appspot.com/o/airbnb%20background.png?alt=media&token=f09388ea-aefb-4023-b9cc-f03e0376b5f4"
         layout="fill"
         objectFit="cover"
       />
