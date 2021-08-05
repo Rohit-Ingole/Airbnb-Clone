@@ -7,12 +7,15 @@ import {
   UserGroupIcon,
 } from "@heroicons/react/solid";
 import { useState } from "react";
+import { useRouter } from "next/router";
 
 import "react-date-range/dist/styles.css"; // main css file
 import "react-date-range/dist/theme/default.css"; // theme css file
 import { DateRangePicker } from "react-date-range";
 
 const Header = () => {
+  const Router = useRouter();
+
   const [searchInput, setSearchInput] = useState("");
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
@@ -48,7 +51,7 @@ const Header = () => {
   };
 
   return (
-    <header className="sticky top-0 x-50 items-center grid grid-cols-2 md:grid-cols-3 bg-white shadow-md p-3 md:px-10 place-content-between z-50">
+    <header className="sticky top-0 x-50 items-center md:grid md:grid-cols-3 flex bg-white shadow-md p-3 md:px-10 place-content-between z-50">
       <div className="relative flex items-center h-10 cursor-pointer my-auto animate-bounce">
         <Image
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Airbnb_Logo_B%C3%A9lo.svg/2560px-Airbnb_Logo_B%C3%A9lo.svg.png"
@@ -81,7 +84,7 @@ const Header = () => {
         </div>
       </div>
       {searchInput && (
-        <div className="flex flex-col col-span-3 mx-auto mt-3 ">
+        <div className="md:flex flex-col col-span-3 mx-auto mt-3 hidden ">
           <DateRangePicker
             ranges={[selectionRange]}
             minDate={new Date()}
