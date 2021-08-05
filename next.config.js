@@ -7,7 +7,6 @@ module.exports = {
       "a0.muscache.com",
       "images.contentstack.io",
       "pbs.twimg.com",
-      "firebasestorage.googleapis.com",
     ],
   },
 };

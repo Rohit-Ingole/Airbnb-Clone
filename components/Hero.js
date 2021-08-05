@@ -1,13 +1,10 @@
 import Image from "next/image";
+import background from "../images/background.png";
 
 const Hero = () => {
   return (
     <div className="relative h-[250px] sm:h-[350px] lg:h-[400px] xl:h-[500px] 2xl:h-[600px]">
-      <Image
-        src="https://firebasestorage.googleapis.com/v0/b/docs-clone-e102b.appspot.com/o/airbnb%20background.png?alt=media&token=f09388ea-aefb-4023-b9cc-f03e0376b5f4"
-        layout="fill"
-        objectFit="cover"
-      />
+      <Image src={background} layout="fill" objectFit="cover" />
       <div className="absolute top-1/3 md:1/4 w-full text-center">
         <p className="text-[2.5rem] md:text-[3rem] lg:text-[3.5rem] xl:text-[4rem] font-bold text-gray-700">
           Go Near
