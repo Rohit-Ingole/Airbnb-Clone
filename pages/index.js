@@ -40,7 +40,7 @@ const Home = () => {
         />
         <section className="pb-5">
           <h2 className="text-3xl font-bold pb-5 py-8">Live anywhere</h2>
-          <div className="flex space-x-6 overflow-scroll scrollbar-hide p-3 -ml-3">
+          <div className="flex space-x-8 overflow-scroll scrollbar-hide p-3 -ml-3">
             {mediumCardData.map(({ image, title }) => (
               <MediumCard image={image} title={title} key={image} />
             ))}
