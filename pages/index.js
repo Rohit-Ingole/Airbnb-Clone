@@ -2,10 +2,15 @@ import Hero from "../components/Hero";
 import Header from "../components/Header";
 import SmallCard from "../components/SmallCard";
 
-import { smallCardData, mediumCardData } from "../constants/cardData";
+import {
+  smallCardData,
+  mediumCardData,
+  discoverData,
+} from "../constants/cardData";
 import MediumCard from "../components/MediumCard";
 import LargeCard from "../components/LargeCard";
 import Footer from "../components/Footer";
+import DiscoverCard from "../components/DiscoverCard";
 
 const Home = () => {
   return (
@@ -33,7 +38,7 @@ const Home = () => {
           buttonText="Learn more"
           white
         />
-        <section>
+        <section className="pb-5">
           <h2 className="text-3xl font-bold pb-5 py-8">Live anywhere</h2>
           <div className="flex space-x-6 overflow-scroll scrollbar-hide p-3 -ml-3">
             {mediumCardData.map(({ image, title }) => (
@@ -41,12 +46,24 @@ const Home = () => {
             ))}
           </div>
         </section>
-        <LargeCard
-          image="https://a0.muscache.com/im/pictures/2da67c1c-0c61-4629-8798-1d4de1ac9291.jpg?im_w=1440"
-          title="The Greatest Outdoors"
-          desc="Wishlist curated by Airbnb"
-          buttonText="Get Inspired"
-        />
+        <section>
+          <h2 className="text-3xl font-bold pb-5 py-8">
+            Discover things to do
+          </h2>
+          <div className="flex overflow-scroll scrollbar-hide p-3 space-x-[42px]">
+            {discoverData.map(({ image, title, desc }) => (
+              <DiscoverCard image={image} title={title} desc={desc} />
+            ))}
+          </div>
+        </section>
+        <section>
+          <LargeCard
+            image="https://a0.muscache.com/im/pictures/2da67c1c-0c61-4629-8798-1d4de1ac9291.jpg?im_w=1440"
+            title="The Greatest Outdoors"
+            desc="Wishlist curated by Airbnb"
+            buttonText="Get Inspired"
+          />
+        </section>
       </main>
       <Footer />
     </div>

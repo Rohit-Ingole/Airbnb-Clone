@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const LargeCard = ({ image, title, desc, buttonText, white }) => {
   return (
-    <section className="relative py-16 cursor-pointer">
+    <div className="relative py-16 cursor-pointer">
       <div className="relative h-96 min-w-[300px] ">
         <Image
           src={image}
@@ -28,7 +28,7 @@ const LargeCard = ({ image, title, desc, buttonText, white }) => {
           {buttonText}
         </button>
       </div>
-    </section>
+    </div>
   );
 };
 
