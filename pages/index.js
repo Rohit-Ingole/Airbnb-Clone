@@ -52,7 +52,12 @@ const Home = () => {
           </h2>
           <div className="flex overflow-scroll scrollbar-hide p-3 space-x-[42px]">
             {discoverData.map(({ image, title, desc }) => (
-              <DiscoverCard image={image} title={title} desc={desc} />
+              <DiscoverCard
+                image={image}
+                title={title}
+                desc={desc}
+                key={image}
+              />
             ))}
           </div>
         </section>
