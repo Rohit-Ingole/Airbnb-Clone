@@ -45,6 +45,7 @@ const Search = ({ searchResults }) => {
                   star={star}
                   price={price}
                   total={total}
+                  key={image}
                 />
               )
             )}
