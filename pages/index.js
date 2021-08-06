@@ -1,6 +1,7 @@
 import Hero from "../components/Hero";
 import Header from "../components/Header";
 import SmallCard from "../components/SmallCard";
+import Map from "../components/Map";
 
 import {
   smallCardData,
@@ -14,7 +15,7 @@ import DiscoverCard from "../components/DiscoverCard";
 
 import largecard1 from "../images/largecard1.jpg";
 
-const Home = () => {
+const Home = ({ searchResults }) => {
   return (
     <div>
       <Header />
@@ -47,6 +48,13 @@ const Home = () => {
             ))}
           </div>
         </section>
+        <section className="h-[450px]">
+          <Map
+            searchResults={searchResults}
+            className="rounded-xl border-4"
+            dark
+          />
+        </section>
         <section>
           <h2 className="text-3xl font-bold pb-5 py-8">
             Discover things to do
@@ -77,3 +85,15 @@ const Home = () => {
 };
 
 export default Home;
+
+export const getServerSideProps = async () => {
+  const searchResults = await fetch("https://jsonkeeper.com/b/5NPS").then(
+    (res) => res.json()
+  );
+
+  return {
+    props: {
+      searchResults,
+    },
+  };
+};

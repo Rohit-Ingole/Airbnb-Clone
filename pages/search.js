@@ -4,6 +4,7 @@ import Footer from "../components/Footer";
 import { useRouter } from "next/router";
 import { format } from "date-fns";
 import InfoCard from "../components/InfoCard";
+import Map from "../components/Map";
 
 const Search = ({ searchResults }) => {
   const router = useRouter();
@@ -18,10 +19,18 @@ const Search = ({ searchResults }) => {
   return (
     <div className="h-screen">
       <Header placeholder={`${location} | ${range} | ${noOfGuests}`} />
-      <main className="flex ">
+      <main className="flex">
         <section className="flex-grow pt-14 px-6">
-          <p className="text-xs font-semibold">
-            100+ Stays - {range} - for {noOfGuests} guests
+          <p className="text-xs font-semibold mb-2">
+            100+ Stays -{" "}
+            <span className="bg-red-400 text-white px-2 py-1 rounded-xl">
+              {formattedStartDate}
+            </span>{" "}
+            -{" "}
+            <span className="bg-red-400 text-white px-2 py-1 rounded-xl">
+              {formattedEndDate}
+            </span>{" "}
+            - for {noOfGuests} guests
           </p>
           <h1 className="text-3xl font-semibold text-gray-700 mb-6">
             Stays in {location}
@@ -50,6 +59,9 @@ const Search = ({ searchResults }) => {
               )
             )}
           </div>
+        </section>
+        <section className="hidden xl:inline-flex min-w-[600px] border-l-2 border-gray-300">
+          <Map searchResults={searchResults} />
         </section>
       </main>
       <Footer />
