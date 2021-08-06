@@ -12,12 +12,14 @@ import LargeCard from "../components/LargeCard";
 import Footer from "../components/Footer";
 import DiscoverCard from "../components/DiscoverCard";
 
+import largecard1 from "../images/largecard1.jpg";
+
 const Home = () => {
   return (
     <div>
       <Header />
       <Hero />
-      <main className="max-w-7xl mx-auto px-8 sm:px-16">
+      <main className="mx-auto px-12 sm:px-20">
         <section className="pt-6">
           <h2 className="text-3xl font-bold pb-5">Explore Nearby</h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
@@ -32,11 +34,10 @@ const Home = () => {
           </div>
         </section>
         <LargeCard
-          image="https://pbs.twimg.com/media/D7WGjc-VUAENpSG.jpg"
-          title="Try Hosting"
+          image={largecard1}
+          title="Not sure where to go? Perfect"
           desc="Earn extra income and unlock new opportunities by sharing your space."
           buttonText="Learn more"
-          white
         />
         <section className="pb-5">
           <h2 className="text-3xl font-bold pb-5 py-8">Live anywhere</h2>

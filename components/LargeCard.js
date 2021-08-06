@@ -3,7 +3,7 @@ import Image from "next/image";
 const LargeCard = ({ image, title, desc, buttonText, white }) => {
   return (
     <div className="relative py-16 cursor-pointer">
-      <div className="relative h-96 min-w-[300px] ">
+      <div className="relative h-[482px] min-w-[300px] ">
         <Image
           src={image}
           layout="fill"
@@ -11,19 +11,14 @@ const LargeCard = ({ image, title, desc, buttonText, white }) => {
           className="rounded-xl"
         />
       </div>
-      <div className="absolute top-32 left-12">
-        <h3
-          className={`text-4xl w-64 mb-3 font-semibold ${
-            white && "text-white"
-          }`}
-        >
+      <div className="absolute md:left-20 top-48 left-8">
+        <h3 className="text-4xl md:text-5xl w-[16rem] md:w-[22rem] mb-3 font-semibold font-Nunito leading-[52px]">
           {title}
         </h3>
-        <p className={`text-md ${white && "text-gray-200"}`}>{desc}</p>
+        <p className="text-lg font-medium">{desc}</p>
         <button
-          className={`${
-            white ? "text-black bg-white" : "text-white bg-gray-900"
-          } text-sm px-4 py-2 rounded-lg mt-5`}
+          className="text-white bg-gray-900
+          text-sm px-4 py-2 rounded-lg mt-5"
         >
           {buttonText}
         </button>

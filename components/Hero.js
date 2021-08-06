@@ -1,20 +1,16 @@
 import Image from "next/image";
-import background from "../images/background.png";
+import HeroImage from "../images/Hero.jpg";
 
 const Hero = () => {
   return (
-    <div className="relative h-[250px] sm:h-[350px] lg:h-[400px] xl:h-[500px] 2xl:h-[600px]">
-      <Image src={background} layout="fill" objectFit="cover" />
-      <div className="absolute top-1/3 md:1/4 w-full text-center">
-        <p className="text-[2.5rem] md:text-[3rem] lg:text-[3.5rem] xl:text-[4rem] font-bold text-gray-700">
-          Go Near
+    <div className="relative h-[250px] sm:h-[350px] lg:h-[450px] xl:h-[550px] 2xl:h-[650px]">
+      <Image src={HeroImage} layout="fill" objectFit="cover" />
+      <div className="absolute top-1/4 md:top-1/3 left-5 lg:left-20 md:1/4 w-[150px] sm:w-full">
+        <p className="text-[1.5rem] sm:text-[2rem] md:text-[2.5rem] lg:text-[3rem] xl:text-[4rem] font-bold text-white max-w-md md:leading-[45px] lg:leading-[60px]">
+          Olympian & Paralympian Online Experiences
         </p>
-        <p className="hidden sm:inline text-md sm:text-lg font font-semibold text-gray-600">
-          Settle in somewhere new. <br /> Discover stays to live, work or just
-          relax.
-        </p>
-        <button className="hidden sm:block mx-auto px-4 py-2 rounded-xl text-gray-800 sm:px-5 sm:py-3 mt-5 border-2 bg-green-500 shadow-lg hover:shadow-md hover:scale-90 transition duration-200 font-semibold">
-          Explore nearby
+        <button className="hidden sm:block rounded-md text-gray-800 text-center px-4 py-1 mt-8 border-2 bg-white shadow-lg hover:shadow-md hover:scale-90 transition duration-200 font-semibold">
+          Explore now
         </button>
       </div>
     </div>
