@@ -13,8 +13,8 @@ import "react-date-range/dist/styles.css"; // main css file
 import "react-date-range/dist/theme/default.css"; // theme css file
 import { DateRangePicker } from "react-date-range";
 
-const Header = () => {
-  const Router = useRouter();
+const Header = ({ placeholder }) => {
+  const router = useRouter();
 
   const [searchInput, setSearchInput] = useState("");
   const [startDate, setStartDate] = useState(new Date());
@@ -22,7 +22,15 @@ const Header = () => {
   const [noOfGuests, setNoOfGuests] = useState(1);
 
   const Submit = () => {
-    console.log("submited");
+    router.push({
+      pathname: "/search",
+      query: {
+        location: searchInput,
+        startDate: startDate.toISOString(),
+        endDate: endDate.toISOString(),
+        noOfGuests,
+      },
+    });
   };
   const Cancel = () => {
     setSearchInput("");
@@ -51,8 +59,13 @@ const Header = () => {
   };
 
   return (
-    <header className="sticky top-0 x-50 items-center md:grid md:grid-cols-3 flex bg-white shadow-md p-3 md:px-10 place-content-between z-50">
-      <div className="relative flex items-center h-10 cursor-pointer my-auto animate-bounce">
+    <header className="sticky top-0 x-50 items-center md:grid md:grid-cols-3 flex bg-white shadow-md p-3 md:px-10 z-50">
+      <div
+        className="relative flex items-center h-10 cursor-pointer my-auto animate-bounce"
+        onClick={() => {
+          router.push("/");
+        }}
+      >
         <Image
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Airbnb_Logo_B%C3%A9lo.svg/2560px-Airbnb_Logo_B%C3%A9lo.svg.png"
           objectFit="contain"
@@ -61,12 +74,12 @@ const Header = () => {
           height={80}
         />
       </div>
-      <div className="flex items-center border-2 rounded-full py-2 md:shadow-sm focus-within:shadow-md">
+      <div className="flex flex-grow ml-4 items-center border-2 rounded-full py-2 md:shadow-sm focus-within:shadow-md">
         <input
           value={searchInput}
           type="text"
-          placeholder="Start your search"
-          className="pl-5 bg-transparent outline-none flex-grow text-md text-gray-600 placeholder-gray-400"
+          placeholder={placeholder || "Start your search"}
+          className="pl-5 bg-transparent outline-none flex-grow text-md text-gray-600 placeholder-gray-400 text-xs sm:text-sm lg:text-md xl:text-lg"
           onChange={(e) => {
             setSearchInput(e.target.value);
           }}
