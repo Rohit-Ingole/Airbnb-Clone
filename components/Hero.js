@@ -5,7 +5,7 @@ const Hero = () => {
   return (
     <div className="relative h-[250px] sm:h-[350px] lg:h-[450px] xl:h-[550px] 2xl:h-[650px]">
       <Image src={HeroImage} layout="fill" objectFit="cover" />
-      <div className="absolute top-1/4 md:top-1/3 left-5 lg:left-20 md:1/4 w-[150px] w-auto">
+      <div className="absolute top-1/4 md:top-1/3 left-5 lg:left-20 md:1/4 w-auto">
         <p className="text-[1.5rem] sm:text-[2rem] md:text-[2.5rem] lg:text-[3rem] xl:text-[4rem] font-bold text-white max-w-md md:leading-[45px] lg:leading-[60px]">
           Olympian & Paralympian Online Experiences
         </p>
