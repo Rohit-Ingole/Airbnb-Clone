@@ -12,7 +12,7 @@ function MyApp({ Component, pageProps }) {
           href="https://cdn.freelogovectors.net/wp-content/uploads/2016/12/airbnb_logo.png"
         />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
           href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
           rel="stylesheet"
